@@ -16,8 +16,6 @@ const getGoals = asyncHandler(async (req, res) => {
 //@route    POST /api/goals
 //@access   Private
 const setGoal = asyncHandler(async (req, res) => {
-  // console.log(req.body);
-
   if (!req.body.text) {
     res.status(400);
     throw new Error("Please add a text field");
@@ -34,8 +32,6 @@ const setGoal = asyncHandler(async (req, res) => {
     user: req.user.id,
   });
 
-  //   console.log(goal);
-
   res.status(200).json(goal);
 });
 
@@ -43,7 +39,6 @@ const setGoal = asyncHandler(async (req, res) => {
 //@route    PUT /api/goals/:id
 //@access   Private
 const updateGoal = asyncHandler(async (req, res) => {
-  // console.log("update", req.params.id);
   const goal = await Goal.findById(req.params.id);
 
   if (!goal) {
@@ -71,8 +66,6 @@ const updateGoal = asyncHandler(async (req, res) => {
     }
   );
 
-  // console.log(updateGoal);
-
   res.status(200).json(updatedGoal);
 });
 
@@ -80,7 +73,6 @@ const updateGoal = asyncHandler(async (req, res) => {
 //@route    DELETE /api/goals/:id
 //@access   Private
 const deleteGoal = asyncHandler(async (req, res) => {
-  // console.log("delete", req.params.id);
   const goal = await Goal.findById(req.params.id);
 
   if (!goal) {

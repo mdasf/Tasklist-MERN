@@ -143,12 +143,6 @@ export const goalSlice = createSlice({
         state.message = action.payload;
       })
 
-      // original code
-      //  state.message = state.goals.filter((goal) => goal._id !== action.payload.id) })
-
-      //.filter was getting stuck for some reason, trying to splice instead
-      // state.message = state.goals.splice(state.goals.indexOf(action.payload), 1) })
-
       //updateGoal actions
       .addCase(updateGoal.pending, (state) => {
         state.isLoading = true;
@@ -156,7 +150,6 @@ export const goalSlice = createSlice({
       .addCase(updateGoal.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        // console.log("updated", action.payload);
         state.message = action.payload;
 
         const updatedGoals = state.goals.map((goal) =>

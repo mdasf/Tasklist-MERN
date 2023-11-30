@@ -1,7 +1,6 @@
 import axios from "axios";
 
-// const BASE_URL = "http://localhost:5000";
-const BASE_URL = "https://backend-sigma-murex.vercel.app";
+import { BASE_URL } from "../../../config";
 const API_URL = `${BASE_URL}/api/users/`;
 
 // Register user
