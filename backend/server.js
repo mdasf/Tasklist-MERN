@@ -29,15 +29,16 @@ app.use("/api/users", require("./routes/userRoutes"));
 //     )
 //   );
 // }
-if (process.env.NODE_ENV === "dev") {
-  app.use(express.static(path.join(__dirname, "../frontend/public")));
-  //   console.log(path.resolve(__dirname, "../", "frontend", "index.html"));
-  app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname, "../", "frontend", "index.html"))
-  );
-} else {
-  app.get("/", (req, res) => res.send("Please set to production"));
-}
+// if (process.env.NODE_ENV === "dev") {
+//   app.use(express.static(path.join(__dirname, "../frontend/public")));
+//   //   console.log(path.resolve(__dirname, "../", "frontend", "index.html"));
+//   app.get("*", (req, res) =>
+//     res.sendFile(path.resolve(__dirname, "../", "frontend", "index.html"))
+//   );
+// } else {
+//   app.get("/", (req, res) => res.send("Please set to production"));
+// }
+
 app.use(errorHandler);
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
