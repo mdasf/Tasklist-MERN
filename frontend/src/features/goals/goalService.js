@@ -1,6 +1,6 @@
 import axios from "axios";
 // const BASE_URL = "http://localhost:5000";
-const BASE_URL = "https://tasklist-mern-api.vercel.app";
+const BASE_URL = "https://backend-di886qi7u-mdasf.vercel.app";
 const API_URL = `${BASE_URL}/api/goals/`;
 
 // Create new goal
