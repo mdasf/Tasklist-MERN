@@ -12,17 +12,11 @@ function Dashboard() {
 
   const { user } = useSelector((state) => state.auth);
 
-  // console.log(user, isError, isLoading, message);
-
   const { goals, isLoading, isError, message } = useSelector(
     (state) => state.goals
   );
 
   useEffect(() => {
-    // if (isError) {
-    //   console.log(message);
-    // }
-
     if (!user) {
       console.log("/login");
       navigate("/login");
@@ -34,7 +28,6 @@ function Dashboard() {
       dispatch(reset());
     };
   }, [user, navigate, dispatch]);
-  // user, navigate, dispatch, isError, message
 
   if (isLoading) {
     return <Spinner />;
@@ -43,7 +36,7 @@ function Dashboard() {
   return (
     <div className="dashboard">
       <div className="form">
-        {isError && <p>${message}</p>}
+        {isError && <p>{message}</p>}
         <section className="heading">
           <h1>Welcome {user && user.name}</h1>
           <p>Dashboard</p>
