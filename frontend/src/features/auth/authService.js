@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // const BASE_URL = "http://localhost:5000";
-const BASE_URL = "https://backend-di886qi7u-mdasf.vercel.app";
+const BASE_URL = "https://backend-536wqgxvi-mdasf.vercel.app";
 const API_URL = `${BASE_URL}/api/users/`;
 
 // Register user
